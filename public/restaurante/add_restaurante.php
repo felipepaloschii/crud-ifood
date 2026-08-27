@@ -4,12 +4,11 @@ include '../../infra/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
-    $email = $_POST['email'];
     $categoria = $_POST['categoria'];
     $telefone = $_POST['telefone'];
     $endereco = $_POST['endereco'];
 
-    $sql = "INSERT INTO restaurante (nome, email, categoria, telefone, endereco) VALUES ('$nome', '$email', '$categoria', '$telefone', '$endereco')";
+    $sql = "INSERT INTO restaurante (nome, categoria, telefone, endereco) VALUES ('$nome', '$categoria', '$telefone', '$endereco')";
 
     if ($conexao->query($sql) === TRUE) {
         echo "Novo restaurante adicionado com sucesso!";
@@ -33,10 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="POST" >
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
-        <br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
         <br><br>
 
         <label for="categoria">Categoria:</label>

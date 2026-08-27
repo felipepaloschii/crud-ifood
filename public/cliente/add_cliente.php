@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
     $endereco = $_POST['endereco'];
+    $categoria = $_POST['categoria'];
 
     $sql = "INSERT INTO cliente (nome, email, telefone, endereco) VALUES ('$nome', '$email', '$telefone', '$endereco')";
 

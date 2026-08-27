@@ -45,6 +45,10 @@
         <input type="date" id="data_pedido" name="data_pedido" required>
         <br><br>
 
+        <label for="valor_total">Valor Total:</label>
+        <input type="number" id="valor_total" name="valor_total"  required>
+        <br><br>
+
         <button type="submit">Cadastrar Pedido</button>
     </form>
     <br>

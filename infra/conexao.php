@@ -2,13 +2,13 @@
 
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $database = "ifood_crud";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conexao = new mysqli($host, $user, $password, $database);
 
-if (!$conn) {
-    die("Falha na conexão: " . mysqli_connect_error());
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
 }
 
 ?>

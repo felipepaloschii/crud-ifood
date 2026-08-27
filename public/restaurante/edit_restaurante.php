@@ -1,43 +1,34 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Cliente</title>
-</head>
-<body>
-    <h2>Editar Cliente</h2>
-    <?php
-
+<?php
 
 include '../../infra/conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_GET['id'];
     $nome = $_POST['nome'];
-    $email = $_POST['email'];
+    $categoria = $_POST['categoria'];
     $telefone = $_POST['telefone'];
     $endereco = $_POST['endereco'];
 
-    $sql = "UPDATE cliente SET nome='$nome', email='$email', telefone='$telefone', endereco='$endereco' WHERE id=$id";
+    $sql = "UPDATE restaurante SET nome='$nome', categoria='$categoria', telefone='$telefone', endereco='$endereco' WHERE id=$id";
 
     if ($conexao->query($sql) === TRUE) {
-        echo "Cliente atualizado com sucesso!";
+        echo "Restaurante atualizado com sucesso!";
     } else {
-        echo "Erro ao atualizar cliente: " . $conexao->error;
+        echo "Erro ao atualizar restaurante: " . $conexao->error;
     }
 }
-?>
 
+?>
 
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Cliente</title>
+    <title>Editar Restaurante</title>
 </head>
 <body>
-    <h2>Editar Cliente</h2>
+    <h2>Editar Restaurante</h2>
     <form method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
@@ -52,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="endereco" name="endereco" required>
         <br><br>
 
-        <button type="submit">Atualizar Cliente</button>
-
+        <button type="submit">Atualizar Restaurante</button>
     </form>
     <br>
     <button type="button" onclick="location.href='../../index.php'">Voltar</button>
